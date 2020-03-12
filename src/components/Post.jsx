@@ -23,7 +23,7 @@ class Post extends Component {
     this.props.deletePost(this.props.post.id);
   }
   render() {
-    console.log(`==========>> PROPS IN POST.js`,this.props)
+    console.log(`===========>> PROPS IN POST.js`,this.props)
     const post = this.props.post ? (
       <div className="post">
         <h4 className="center">{this.props.post.title}</h4>
