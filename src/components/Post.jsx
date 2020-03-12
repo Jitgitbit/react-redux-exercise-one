@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+import {connect} from 'react-redux';
 
-export default class Post extends Component {
-  state ={
-    post: null
-  }
-  componentDidMount(){
-    console.log(`=========>> PROPS IN POST:`,this.props)
+class Post extends Component {
+  // state ={
+  //   post: null
+  // }
+  // componentDidMount(){
+  //   console.log(`=========>> PROPS IN POST:`,this.props)
 
-    let specificId = this.props.match.params.post_id
+  //   let specificId = this.props.match.params.post_id
 
-    axios.get('https://jsonplaceholder.typicode.com/posts/' + specificId)
-    .then(res => {
-      this.setState({
-        post: res.data
-      })
-      console.log(`========>> RESPONSE IN POST FROM GET`,res)
-    })
-  }
+  //   axios.get('https://jsonplaceholder.typicode.com/posts/' + specificId)
+  //   .then(res => {
+  //     this.setState({
+  //       post: res.data
+  //     })
+  //     console.log(`========>> RESPONSE IN POST FROM GET`,res)
+  //   })
+  // }
   render() {
     const post = this.state.post ? (
       <div className="post">
@@ -34,3 +35,11 @@ export default class Post extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect(mapStateToProps)(Post);

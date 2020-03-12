@@ -8,15 +8,15 @@ class Home extends Component {
   // state ={
   //   posts: [ ]
   // }
-  componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/posts') //This is asynchronous, 0.5 - 3 seconds // It's a Promise
-    .then(res => {
-      console.log(`=========>> logging response from get in home:`,res)
-      this.setState({
-        posts: res.data.slice(0, 10)
-      })
-    })
-  }
+  // componentDidMount(){
+  //   axios.get('https://jsonplaceholder.typicode.com/posts') //This is asynchronous, 0.5 - 3 seconds // It's a Promise
+  //   .then(res => {
+  //     console.log(`=========>> logging response from get in home:`,res)
+  //     this.setState({
+  //       posts: res.data.slice(0, 10)
+  //     })
+  //   })
+  // }
   render() {
     console.log(this.props)
     const {posts} = this.props;
