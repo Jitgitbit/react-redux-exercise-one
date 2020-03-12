@@ -15,9 +15,12 @@ const rootReducer = (state = initialState, action) => {
   if(action.type === 'DELETE_POST'){
     let newPosts = state.posts.filter(post => {
       return action.id !== post.id                         // We get post.id from the deletePost fn, go and check!!!
-    })
+    });
+    return {
+      ...state,                       // We keep the other state properties with the spread operator!!!
+      posts: newPosts
+    }
   }
-
   return state;
 }
 
