@@ -20,6 +20,7 @@ class Post extends Component {
   //   })
   // }
   render() {
+    console.log(`==========>> this`)
     const post = this.state.post ? (
       <div className="post">
         <h4 className="center">{this.state.post.title}</h4>
@@ -36,10 +37,8 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    posts: state.posts
-  }
+const mapStateToProps = (state, ownProps) => {
+  let id = ownProps.match.params.post_id
 }
 
 export default connect(mapStateToProps)(Post);
