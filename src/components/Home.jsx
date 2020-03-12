@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import phoenixLogo from '../images/phoenixLogo.png'
+import {connect} from 'react-redux';
 
-export default class Home extends Component {
+class Home extends Component {
   state ={
     posts: [ ]
   }
@@ -43,3 +44,4 @@ export default class Home extends Component {
     )
   }
 }
+export default connect()(Home);
