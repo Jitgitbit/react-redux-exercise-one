@@ -5,9 +5,9 @@ import phoenixLogo from '../images/phoenixLogo.png'
 import {connect} from 'react-redux';
 
 class Home extends Component {
-  state ={
-    posts: [ ]
-  }
+  // state ={
+  //   posts: [ ]
+  // }
   componentDidMount(){
     axios.get('https://jsonplaceholder.typicode.com/posts') //This is asynchronous, 0.5 - 3 seconds // It's a Promise
     .then(res => {
@@ -18,7 +18,9 @@ class Home extends Component {
     })
   }
   render() {
-    const {posts} = this.state;
+    console.log(this.props)
+    const {posts} = this.props;
+    // const {posts} = this.state;
     const postList = posts.length ? (
       posts.map(post => {
         return (
