@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import axios from 'axios'
 import {connect} from 'react-redux';
+import {deletePost} from '../actions/postActions'
 
 class Post extends Component {
   // state ={
@@ -58,12 +59,15 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    deletePost: (givenId) => {
-      dispatch({
-        type: 'DELETE_POST',
-        id: givenId
-      })
+    deletePost: (id) => {
+      dispatch(deletePost(id));                     // Now using the imported ACTION CREATOR !!!
     }
+    // deletePost: (givenId) => {
+    //   dispatch({
+    //     type: 'DELETE_POST',
+    //     id: givenId
+    //   })
+    // }
   }
 }
 
