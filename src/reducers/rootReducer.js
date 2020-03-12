@@ -10,6 +10,7 @@ const initialState = {
 }
 
 const rootReducer = (state = initialState, action) => {
+  console.log(`==============>> recieved ACTION:`, action)
   return state;
 }
 
